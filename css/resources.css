@@ -1,0 +1,192 @@
+/* Resources Section */
+.resources-section {
+    padding: 8rem 0 4rem;
+    background-color: #f8fafc;
+    min-height: 100vh;
+}
+
+.resources-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #1e293b;
+    position: relative;
+}
+
+.resources-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 2px;
+}
+
+/* Tab Navigation */
+.resource-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.8rem;
+    background: #e2e8f0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.tab-button:hover:not(.active) {
+    background: #cbd5e1;
+}
+
+/* Resource Content */
+.resource-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    min-height: 400px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.resource-content h2 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: #2563eb;
+}
+
+.resource-card h3 {
+    color: #1e293b;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.resource-card p {
+    color: #64748b;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.resource-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.resource-link:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.no-resources {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resources-section {
+        padding: 6rem 0 2rem;
+    }
+    
+    .resources-section h1 {
+        font-size: 2rem;
+    }
+    
+    .resource-tabs {
+        gap: 0.5rem;
+    }
+    
+    .tab-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .resource-content {
+        padding: 1.5rem;
+        min-height: 300px;
+    }
+    
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resource-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resources-section {
+        padding: 5rem 0 1.5rem;
+    }
+    
+    .resources-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .resource-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-button {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+}

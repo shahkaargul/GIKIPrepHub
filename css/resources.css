@@ -32,6 +32,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 3rem;
+    padding: 0 1rem;
 }
 
 .tab-button {
@@ -42,7 +43,8 @@
     font-weight: 600;
     color: #64748b;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 .tab-button.active {
@@ -53,6 +55,7 @@
 
 .tab-button:hover:not(.active) {
     background: #cbd5e1;
+    color: #475569;
 }
 
 /* Resource Content */
@@ -62,14 +65,22 @@
     padding: 2.5rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     min-height: 400px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .tab-content {
     display: none;
+    animation: fadeIn 0.5s ease;
 }
 
 .tab-content.active {
     display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .resource-content h2 {
@@ -90,8 +101,10 @@
     background: #f8fafc;
     border-radius: 8px;
     padding: 1.5rem;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
 }
 
 .resource-card:hover {
@@ -104,6 +117,7 @@
     color: #1e293b;
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
+    line-height: 1.4;
 }
 
 .resource-card p {
@@ -111,6 +125,7 @@
     margin-bottom: 1.2rem;
     font-size: 0.9rem;
     line-height: 1.5;
+    flex-grow: 1;
 }
 
 .resource-link {
@@ -122,12 +137,15 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
 }
 
 .resource-link:hover {
     background: #1d4ed8;
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.2);
 }
 
 .no-resources {
@@ -135,9 +153,32 @@
     color: #64748b;
     font-size: 1.1rem;
     padding: 2rem;
+    grid-column: 1 / -1;
 }
 
-/* Responsive */
+/* Resource Download Button */
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.download-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .resource-content {
+        padding: 2rem;
+    }
+    
+    .resource-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .resources-section {
         padding: 6rem 0 2rem;
@@ -145,10 +186,12 @@
     
     .resources-section h1 {
         font-size: 2rem;
+        margin-bottom: 2rem;
     }
     
     .resource-tabs {
         gap: 0.5rem;
+        margin-bottom: 2rem;
     }
     
     .tab-button {
@@ -159,10 +202,6 @@
     .resource-content {
         padding: 1.5rem;
         min-height: 300px;
-    }
-    
-    .resource-grid {
-        grid-template-columns: 1fr;
     }
     
     .resource-content h2 {
@@ -177,16 +216,26 @@
     
     .resources-section h1 {
         font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
     
     .resource-tabs {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
     }
     
     .tab-button {
         width: 100%;
         max-width: 200px;
         text-align: center;
+    }
+    
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resource-card {
+        padding: 1.25rem;
     }
 }

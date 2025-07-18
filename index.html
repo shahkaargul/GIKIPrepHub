@@ -11,20 +11,6 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-    <!-- Popup Modal -->
-    <div class="modal-overlay" id="welcomeModal">
-        <div class="modal-content animate__animated animate__zoomIn">
-            <span class="close-modal">&times;</span>
-            <h2>Welcome to GIKI Prep Hub!</h2>
-            <p>Get exclusive access to premium resources and tips to ace your entrance exam.</p>
-            <form class="modal-form">
-                <input type="email" placeholder="Enter your email for updates">
-                <button type="submit" class="modal-btn">Get Updates</button>
-            </form>
-            <p class="modal-note">We respect your privacy. Unsubscribe at any time.</p>
-        </div>
-    </div>
-
     <nav class="navbar animate__animated animate__fadeIn">
         <div class="logo">
             <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
@@ -54,6 +40,30 @@
                 <i class="fas fa-chevron-down"></i>
             </div>
         </div>
+    </section>
+    <section class="students-section">
+      <div class="countdown-container">
+        <h1>GIKI Entrance Test Countdown</h1>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+        <p class="exam-date">Next Test Date: July 09, 2026</p>
+      </div>
     </section>
 
     <section class="students-section">
@@ -115,5 +125,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/timer.js"></script>
 </body>
 </html>

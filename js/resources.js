@@ -23,15 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 { title: 'General Mathematics', desc: 'Complete BCAT Playlist by Sir Hashim Zia', link: 'https://www.youtube.com/watch?v=7o7YTzAttN4&list=PL5b9mn6-ELrGE-jKjrOdygGVaucoXRcDC' },
             ]
         },
-        'Mock-Tests': {
-            title: 'Mock Tests',
-            resources: [
-                { title: 'General Mathematics', desc: 'Comprehensive notes organized by subject topics', link: '#' },
-                { title: 'Mathematics', desc: 'Algebra, Calculus, Trigonometry study materials', link: '#' },
-                { title: 'Physics ', desc: 'Mechanics, Electricity, Modern Physics resources', link: '#' },
-                { title: 'English', desc: 'Organic, Inorganic, Physical Chemistry materials', link: '#' }
-            ]
-        },
         
         'websites': {
             title: 'Top Helpful Websites',
@@ -39,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { title: 'Khan Academy', desc: 'Free online courses for math and science', link: 'https://www.khanacademy.org/', external: true },
                 { title: 'IndiaBix (For Management Sciences)', desc: 'Get all the topic-wise material you need for Management Sciences Preperation (General Math)', link: 'https://www.indiabix.com/aptitude/questions-and-answers/', external: true },
                 { title: 'CareerRide (For Management Sciences)', desc: 'Get all the topic-wise material you need for Management Sciences Preperation (General Math)', link: 'https://www.careerride.com/', external: true },
-                { title: 'Aggregate Calculator', desc: 'Calculate your GIKI Aggregate using this website', link: 'https://www.result.pk/giki-merit-calculator/', external: true }
+                { title: 'Aggregate Calculator', desc: 'Calculate your GIKI Aggregate using this website', link: 'https://shahkaargul.github.io/GIKIAggregateCalc/', external: true }
             ]
         }
     };

@@ -1,3 +1,56 @@
+/* Best Resource Card Styles */
+.best-card {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.best-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 48px rgba(37,99,235,0.18);
+}
+.best-card h3 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+.best-card p {
+    color: #e0e7ef;
+    margin-bottom: 1.2rem;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+.best-card .resource-link {
+    background: #fff;
+    color: #2563eb;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.3s, color 0.3s;
+}
+.best-card .resource-link:hover {
+    background: #2563eb;
+    color: #fff;
+}
+.resource-icon {
+    font-size: 2.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6 0%, #f1c40f 100%);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    position: relative;
+    left: 0;
+}
 /* Resources Section */
 .resources-section {
     padding: 8rem 0 4rem;

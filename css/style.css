@@ -1,3 +1,120 @@
+/* Cool Alumnus Card Styles */
+.cool-card {
+    position: relative;
+    overflow: visible;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+    background: linear-gradient(135deg, #f1c40f 0%, #3498db 100%);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.cool-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 16px 48px rgba(52,152,219,0.18);
+}
+.cool-card .student-info {
+        background: rgba(255,255,255,0.85);
+        border-radius: 0 0 18px 18px;
+        color: #2c3e50;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(52,152,219,0.07);
+}
+.cool-card .student-info h3 {
+        color: #2c3e50;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+}
+.cool-card .student-info p {
+        color: #444;
+        margin: 4px 0;
+        font-size: 1rem;
+        font-weight: 500;
+}
+.cool-card .student-info i {
+        margin-right: 7px;
+        color: #3498db;
+}
+.student-image {
+    position: relative;
+    z-index: 1;
+}
+.student-image img {
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 4px 16px rgba(52,152,219,0.10);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.cool-card:hover .student-image img {
+    transform: scale(1.05) rotate(-2deg);
+}
+.student-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(241,196,15,0.18) 0%, rgba(52,152,219,0.12) 80%);
+    filter: blur(18px);
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+/* Animate.css delay helpers for more dramatic effect */
+.animate__delay-1s { animation-delay: 0.2s; }
+.animate__delay-2s { animation-delay: 0.4s; }
+.animate__delay-3s { animation-delay: 0.6s; }
+.animate__delay-4s { animation-delay: 0.8s; }
+.animate__delay-5s { animation-delay: 1.0s; }
+.animate__delay-6s { animation-delay: 1.2s; }
+.animate__delay-7s { animation-delay: 1.4s; }
+/* Motivation Section Styles */
+.motivation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 3rem 0;
+}
+
+.motivation-card {
+    background: linear-gradient(135deg, #f1c40f 0%, #3498db 100%);
+    color: #fff;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.motivation-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.motivation-quote {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.motivation-author {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    background: rgba(255,255,255,0.18);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
 /* Base Styles */
 * {
     margin: 0;
@@ -5,6 +122,129 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Notification Popup Styles */
+
+.notification-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #3498db 0%, #f1c40f 100%);
+    color: #fff;
+    min-width: 340px;
+    max-width: 480px;
+    width: 90%;
+    padding: 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+    z-index: 2000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    animation: popupScaleFadeIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes popupScaleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+.notification-content {
+    width: 100%;
+    padding: 1.5rem 2.2rem 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.notification-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+.notification-icon {
+    font-size: 1.7rem;
+    color: #fff;
+    filter: drop-shadow(0 2px 8px rgba(44,62,80,0.10));
+}
+.notification-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+.notification-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.notification-message {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    line-height: 1.5;
+}
+.notification-message.main-message {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.notification-close {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    margin: 1rem 1rem 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.notification-close:hover {
+    background: rgba(255,255,255,0.35);
+}
+@media (max-width: 600px) {
+    .notification-popup {
+        font-size: 0.95rem;
+        min-width: 220px;
+        max-width: 98vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .notification-content {
+        padding: 1.1rem 1.2rem 1rem 1rem;
+    }
+    .notification-title {
+        font-size: 1rem;
+    }
+    .notification-close {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        margin: 0.7rem 0.7rem 0 0;
+    }
+}
+
 
 body {
     background-color: #f5f7fa;
@@ -479,19 +719,29 @@ button:disabled {
 }
 /* Countdown Timer Styles */
 .countdown-container {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(52,152,219,0.08);
+    position: relative;
+    margin-bottom: 2rem;
 }
 
 .countdown-title {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(52,152,219,0.08);
 }
 
 .countdown-title::after {
@@ -507,57 +757,74 @@ button:disabled {
 }
 
 .countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(52,152,219,0.07);
+    padding: 1rem 0.5rem;
 }
 
 .countdown-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.06);
+    padding: 0.5rem 0.5rem;
+    transition: box-shadow 0.3s;
+    position: relative;
+    margin: 0 0.2rem;
+    box-shadow: 0 8px 24px rgba(52,152,219,0.13);
+    background: rgba(255,255,255,0.85);
 }
 
 .countdown-value {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #2c3e50;
-  background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  margin-bottom: 0.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    background: rgba(255,255,255,0.95);
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(52,152,219,0.10);
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(52,152,219,0.08);
 }
 
 .countdown-value::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #3498db, #f1c40f);
-  animation: rainbow 8s linear infinite;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #f1c40f);
+    animation: rainbow 8s linear infinite;
+    opacity: 0.7;
 }
 
 .countdown-label {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #7f8c8d;
-  font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(52,152,219,0.07);
 }
 
 .exam-date {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 1rem;
+    text-shadow: 0 1px 4px rgba(52,152,219,0.07);
 }
 
 .exam-date strong {

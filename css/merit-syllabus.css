@@ -89,8 +89,21 @@
 
 .merit-img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 320px;
+    object-fit: contain;
+    background: #f5f7fa;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+    border: 2px solid #e1e8ed;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.merit-card:hover .merit-img {
+    transform: scale(1.04);
+    box-shadow: 0 16px 48px rgba(52,152,219,0.18);
+    border-color: #3498db;
 }
 
 .merit-info {
@@ -153,6 +166,31 @@
     display: block;
 }
 
+/* Syllabus Grid Layout */
+.syllabus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+.syllabus-subject {
+    margin-bottom: 0;
+    background-color: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(52,152,219,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 260px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.syllabus-subject:hover {
+    box-shadow: 0 16px 48px rgba(52,152,219,0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+
+
 .syllabus-subject {
     margin-bottom: 30px;
     background-color: white;
@@ -168,6 +206,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-weight: 600;
 }
 
 .syllabus-subject h4 i {
@@ -177,6 +216,7 @@
 .syllabus-subject ul {
     list-style-type: none;
     padding-left: 0;
+    width: 100%;
 }
 
 .syllabus-subject ul li {
@@ -184,6 +224,8 @@
     border-bottom: 1px solid #ecf0f1;
     display: flex;
     align-items: center;
+    font-size: 1rem;
+    color: #2c3e50;
 }
 
 .syllabus-subject ul li:before {
@@ -197,6 +239,9 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .syllabus-grid {
+        grid-template-columns: 1fr;
+    }
     .merit-container {
         grid-template-columns: 1fr;
     }

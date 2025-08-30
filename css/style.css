@@ -145,7 +145,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(135deg, #3498db 0%, #f1c40f 100%);
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: #fff;
     min-width: 340px;
     max-width: 480px;

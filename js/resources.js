@@ -1,43 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Tab functionality
     const tabButtons = document.querySelectorAll('.tab-button');
-    const resourceContent = document.querySelector('.resource-content');
+    const tabContents = document.querySelectorAll('.tab-content');
     
-    // Updated resource data with all sections
-    const resourceData = {
-        'tpp': {
-            title: 'Topical Practice Questions',
-            resources: [
-                { title: 'Physics TPP (For Engineering Only)', desc: 'Complete FSC (11th and 12th) Topical Practice Papers', link: 'https://drive.google.com/drive/folders/1Oooxi-AjyeTsUvBB7zDAULa2WeTiEryL?usp=drive_link' },
-                { title: 'Mathematics TPP (For Engineering Only)', desc: 'Complete Book Topical Practice Questions', link: '#' },
-                { title: 'English TPP (For Management Sciences + Engineering)', desc: 'Topical Practice Questions', link: 'https://drive.google.com/drive/folders/1VW_XPeG0sspeR-CQ07hp6EbDHck49GjF?usp=drive_link' },
-                { title: 'General Math (For Management Sciences Only)', desc: 'General Math important Topics TPPs', link: 'https://drive.google.com/drive/folders/12RSCB2W0701S-ASmgHk4bwBn1hcXaoi3?usp=drive_link' }
-            ]
-        },
-        'lectures': {
-            title: 'lectures',
-            resources: [
-                { title: 'Physics', desc: 'Complete ECAT Playlist by Sir Bilal Zia', link: 'https://www.youtube.com/watch?v=8t82rUkNMOg&list=PLG6V3xWznon93t0CIAhcGPcOaVhiF64td' },
-                { title: 'Mathematics', desc: 'Complete ECAT Playlist by Sir Hashim Zia', link: 'https://www.youtube.com/watch?v=gSv2dlRBNj8&list=PL5b9mn6-ELrGIsc3LVnFEzlN1fs75Ay--' },
-                { title: 'English', desc: 'Complete English Prep by Sir Omair Siddique', link: 'https://www.youtube.com/watch?v=KjdmNG5Z5Bs&list=PL5b9mn6-ELrGlwBbXTimKqVwKsthZsRVP' },
-                { title: 'General Mathematics', desc: 'Complete BCAT Playlist by Sir Hashim Zia', link: 'https://www.youtube.com/watch?v=7o7YTzAttN4&list=PL5b9mn6-ELrGE-jKjrOdygGVaucoXRcDC' },
-            ]
-        },
-        
-        'websites': {
-            title: 'Top Helpful Websites',
-            resources: [
-                { title: 'Khan Academy', desc: 'Free online courses for math and science', link: 'https://www.khanacademy.org/', external: true },
-                { title: 'IndiaBix (For Management Sciences)', desc: 'Get all the topic-wise material you need for Management Sciences Preperation (General Math)', link: 'https://www.indiabix.com/aptitude/questions-and-answers/', external: true },
-                { title: 'CareerRide (For Management Sciences)', desc: 'Get all the topic-wise material you need for Management Sciences Preperation (General Math)', link: 'https://www.careerride.com/', external: true },
-                { title: 'Aggregate Calculator', desc: 'Calculate your GIKI Aggregate using this website', link: 'https://shahkaargul.github.io/GIKIAggregateCalc/', external: true }
-            ]
-        }
-    };
-
-    // Load initial tab content
-    loadTabContent('tpp');
-
     // Tab click handlers
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -45,38 +10,93 @@ document.addEventListener('DOMContentLoaded', function() {
             tabButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
-            // Load content
+            // Show the selected tab content
             const tabId = this.getAttribute('data-tab');
-            loadTabContent(tabId);
+            
+            // Hide all tab contents
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
         });
     });
 
-    function loadTabContent(tabId) {
-        const tabData = resourceData[tabId] || {};
-        const resources = tabData.resources || [];
-        
-        let html = `<h2>${tabData.title || 'Resources'}</h2><div class="resource-grid">`;
-        
-        if (resources.length === 0) {
-            html = '<p class="no-resources">No resources available yet. Check back soon!</p>';
-        } else {
-            resources.forEach(resource => {
-                const linkTarget = resource.external ? ' target="_blank"' : '';
-                const linkText = resource.external ? 'Visit' : (resource.title.includes('Mock') ? 'Start Test' : 
-
-                                resource.title.includes('Notes') || resource.title.includes('Topics') ? 'Study' : 'Download');
-                
-                html += `
-                    <div class="resource-card">
-                        <h3>${resource.title}</h3>
-                        <p>${resource.desc}</p>
-                        <a href="${resource.link}"${linkTarget} class="resource-link">${linkText}</a>
-                    </div>
-                `;
-            });
-            html += '</div>';
-        }
-        
-        resourceContent.innerHTML = html;
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
     }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (navLinks && mobileMenuBtn && 
+            !event.target.closest('.nav-links') && 
+            !event.target.closest('.mobile-menu-btn') &&
+            navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
+
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add animation to resource cards when they come into view
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all resource cards
+    document.querySelectorAll('.resource-card, .past-paper-card').forEach(card => {
+        observer.observe(card);
+    });
+
+    // Add loading animation for resource links
+    document.querySelectorAll('.resource-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (!this.href || this.href === '#' || this.getAttribute('target') === '_blank') return;
+            
+            e.preventDefault();
+            this.classList.add('loading');
+            
+            // Simulate loading for demonstration
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 800);
+        });
+    });
 });

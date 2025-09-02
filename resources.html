@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - GIKI Prep Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/resources.css">
     <link rel="stylesheet" href="css/about.css">
@@ -31,10 +32,11 @@
                 <button class="tab-button active" data-tab="tpp">Topical Practice Questions</button>
                 <button class="tab-button" data-tab="lectures">Lectures</button>
                 <button class="tab-button" data-tab="websites">Helpful Websites</button>
+                <button class="tab-button" data-tab="past-papers">Past Papers</button>
             </div>
             
             <div class="resource-content">
-                <!-- Notes Section -->
+                <!-- Topical Practice Questions Section -->
                 <div id="tpp" class="tab-content active">
                     <h2>Topical Practice Questions</h2>
                     <div class="resource-grid">
@@ -65,33 +67,33 @@
                     </div>
                 </div>
 
-                <!-- Topic-wise Section -->
-                <div id="topic-wise" class="tab-content">
-                    <h2>Topic-wise Resources</h2>
+                <!-- Lectures Section -->
+                <div id="lectures" class="tab-content">
+                    <h2>Lectures</h2>
                     <div class="resource-grid">
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-book-open"></i></div>
-                            <h3>Topic-wise Notes</h3>
-                            <p>Comprehensive notes organized by subject topics</p>
-                            <a href="#" class="resource-link"><i class="fas fa-eye"></i> View Notes</a>
+                            <div class="resource-icon"><i class="fas fa-video"></i></div>
+                            <h3>Physics Lectures</h3>
+                            <p>Comprehensive video lectures for Physics preparation</p>
+                            <a href="#" class="resource-link"><i class="fas fa-play-circle"></i> Watch Now</a>
                         </div>
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-square-root-alt"></i></div>
-                            <h3>Mathematics Topics</h3>
-                            <p>Algebra, Calculus, Trigonometry study materials</p>
-                            <a href="#" class="resource-link"><i class="fas fa-book"></i> Study</a>
+                            <div class="resource-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <h3>Mathematics Lectures</h3>
+                            <p>Step-by-step math problem solving videos</p>
+                            <a href="#" class="resource-link"><i class="fas fa-play-circle"></i> Watch Now</a>
                         </div>
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-atom"></i></div>
-                            <h3>Physics Topics</h3>
-                            <p>Mechanics, Electricity, Modern Physics resources</p>
-                            <a href="#" class="resource-link"><i class="fas fa-book"></i> Study</a>
+                            <div class="resource-icon"><i class="fas fa-book"></i></div>
+                            <h3>English Lectures</h3>
+                            <p>English proficiency and test preparation videos</p>
+                            <a href="#" class="resource-link"><i class="fas fa-play-circle"></i> Watch Now</a>
                         </div>
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-flask"></i></div>
-                            <h3>Chemistry Topics</h3>
-                            <p>Organic, Inorganic, Physical Chemistry materials</p>
-                            <a href="#" class="resource-link"><i class="fas fa-book"></i> Study</a>
+                            <div class="resource-icon"><i class="fas fa-brain"></i></div>
+                            <h3>IQ Lectures</h3>
+                            <p>Intelligence test preparation and practice</p>
+                            <a href="#" class="resource-link"><i class="fas fa-play-circle"></i> Watch Now</a>
                         </div>
                     </div>
                 </div>
@@ -113,17 +115,64 @@
                             <a href="https://tutorial.math.lamar.edu/" target="_blank" class="resource-link"><i class="fas fa-external-link-alt"></i> Visit</a>
                         </div>
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-atom"></i></div>
-                            <h3>Physics Classroom</h3>
-                            <p>Interactive physics tutorials and resources</p>
-                            <a href="https://www.physicsclassroom.com/" target="_blank" class="resource-link"><i class="fas fa-external-link-alt"></i> Visit</a>
+                            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>IndiaBix (Best for Management Sciences Prep)</h3>
+                            <p>Aptitude questions and answers for your placement interviews and competitive exams!</p>
+                            <a href="https://www.indiabix.com/" target="_blank" class="resource-link"><i class="fas fa-external-link-alt"></i> Visit</a>
                         </div>
                         <div class="resource-card best-card">
-                            <div class="resource-icon"><i class="fas fa-flask"></i></div>
-                            <h3>ChemGuide</h3>
-                            <p>Comprehensive chemistry learning resource</p>
-                            <a href="https://www.chemguide.co.uk/" target="_blank" class="resource-link"><i class="fas fa-external-link-alt"></i> Visit</a>
+                            <div class="resource-icon"><i class="fas fa-calculator"></i></div>
+                            <h3>GIKI Aggregate Calculator</h3>
+                            <p>Calculate your GIKI Entrance Test Aggregate based on Last Year's merit list</p>
+                            <a href="https://shahkaargul.github.io/GIKIAggregateCalc/" target="_blank" class="resource-link"><i class="fas fa-external-link-alt"></i> Visit</a>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Past Papers Section -->
+                <div id="past-papers" class="tab-content">
+                    <h2>Past Papers Collection</h2>
+                    <div class="past-papers-grid">
+                        <div class="past-paper-card" data-year="2023">
+                            <div class="paper-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h3>2023 GIKI - Past Paper</h3>
+                            <div class="paper-details">
+                                <span class="detail"><i class="fas fa-calendar"></i> 2023</span>
+                                <span class="detail"><i class="fas fa-file-alt"></i> Engineering</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1bTxcoxFJApBHbDBL-yt6er023voiGFS8/view" class="resource-link"><i class="fas fa-download"></i> Download PDF</a>
+                        </div>
+                        
+                        <div class="past-paper-card" data-year="2022">
+                            <div class="paper-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h3>2010 GIKI - Past Paper</h3>
+                            <div class="paper-details">
+                                <span class="detail"><i class="fas fa-calendar"></i> 2010</span>
+                                <span class="detail"><i class="fas fa-file-alt"></i> Engineering</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1GVt-Z0pJK6yPB-HCc0lG6PgFjkpywXVs/view" class="resource-link"><i class="fas fa-download"></i> Download PDF</a>
+                        </div>
+                        
+                        <div class="past-paper-card" data-year="2021">
+                            <div class="paper-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h3>2016 GIKI - Past Paper</h3>
+                            <div class="paper-details">
+                                <span class="detail"><i class="fas fa-calendar"></i> 2016</span>
+                                <span class="detail"><i class="fas fa-file-alt"></i> Math & Physics </span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/12XY87QFJu6E9kWb9lD2SwZ8QyadltylW/view" class="resource-link"><i class="fas fa-download"></i> Download PDF</a>
+                        </div>
+                        
+                        <div class="past-paper-card" data-year="2020">
+                            <div class="paper-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h3>2020 GIKI - Sample Paper</h3>
+                            <div class="paper-details">
+                                <span class="detail"><i class="fas fa-calendar"></i> 2020</span>
+                                <span class="detail"><i class="fas fa-file-alt"></i> Engineering</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1RQuy0AALMs25vgJHXcPTykG1Uyfw78xY/view" class="resource-link"><i class="fas fa-download"></i> Download PDF</a>
+                        </div>
+                        <!-- More past paper cards can be added here -->
                     </div>
                 </div>
             </div>
@@ -132,6 +181,5 @@
 
     <script src="js/main.js"></script>
     <script src="js/resources.js"></script>
-    
 </body>
 </html>
